@@ -59,7 +59,7 @@
     {
       "method": "POST",
       "path": "/resultcad/findid",
-      "handler": "resultdiabetes.findID",
+      "handler": "resultcad.findID",
       "config": {
         "policies": []
       }

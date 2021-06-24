@@ -46,6 +46,7 @@ module.exports = {
         tchol,
         hdl,
         risk_cad,
+        waist,
       });
     }
     ctx.send(risk_cad);

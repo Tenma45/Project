@@ -36,7 +36,7 @@
         label-cols-sm="6"
         label-align-sm="right"
       >
-        <b-form-input :value="data.glucose" readonly></b-form-input>
+        <b-form-input :value="data.fbs" readonly></b-form-input>
       </b-form-group>
       <b-form-group
         label="ความยาวรอบเอว : "
@@ -52,7 +52,7 @@
         label-cols-sm="6"
         label-align-sm="right"
       >
-        <b-form-input :value="data.pressurehigh" readonly></b-form-input>
+        <b-form-input :value="data.bpsy" readonly></b-form-input>
       </b-form-group>
       <b-form-group
         label="คลอเรสเตอรอลทั้งหมด : "
@@ -60,7 +60,7 @@
         label-cols-sm="6"
         label-align-sm="right"
       >
-        <b-form-input :value="data.chloresterolall" readonly></b-form-input>
+        <b-form-input :value="data.tchol" readonly></b-form-input>
       </b-form-group>
       <b-form-group
         label="คลอเรสเตอรอล HDL : "
@@ -77,7 +77,7 @@
         label-align-sm="right"
       >
         <b-form-input
-          :value="transformResult(data.risk_diabetes)"
+          :value="transformResult(data.risk_db)"
           readonly
         ></b-form-input>
       </b-form-group>
@@ -93,11 +93,10 @@ export default {
   methods: {
     transformResult(data) {
       let result = ''
-      if (data === 0) {
-        result = 'ไม่มีความเสียง'
-      }
-      if (data === 1) {
-        result = 'มีความเสียง'
+      if (!data) {
+        result = 'ไม่มีความเสี่ยง'
+      } else {
+        result = 'มีความเสี่ยง'
       }
       return result
     },

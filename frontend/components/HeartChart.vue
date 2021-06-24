@@ -95,11 +95,11 @@ export default {
     init(data) {
       for (let i = 0; i < data.length; i++) {
         this.chartData.datasets[0].data.push(data[i].age)
-        this.chartData.datasets[1].data.push(data[i].glucose)
+        this.chartData.datasets[1].data.push(data[i].fbs)
         this.chartData.datasets[2].data.push(data[i].waist)
-        this.chartData.datasets[3].data.push(data[i].pressurehigh)
-        this.chartData.datasets[4].data.push(data[i].pressurelow)
-        this.chartData.datasets[5].data.push(data[i].chloresterolall)
+        this.chartData.datasets[3].data.push(data[i].bpsy)
+        this.chartData.datasets[4].data.push(data[i].bpdi)
+        this.chartData.datasets[5].data.push(data[i].tchol)
         this.chartData.datasets[6].data.push(data[i].hdl)
         this.chartData.labels.push(
           new Date(data[i].created_at).toLocaleString()

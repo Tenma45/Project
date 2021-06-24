@@ -52,6 +52,7 @@ module.exports = {
         height,
         weight,
         risk_db,
+        waist,
       });
     }
     ctx.send(risk_db);

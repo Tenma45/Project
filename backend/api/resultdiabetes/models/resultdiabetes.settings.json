@@ -47,8 +47,12 @@
       "type": "decimal",
       "required": true
     },
+    "waist": {
+      "type": "decimal",
+      "required": true
+    },
     "risk_db": {
-      "type": "boolean",
+      "type": "integer",
       "required": true
     }
   }
