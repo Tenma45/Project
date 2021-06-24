@@ -134,6 +134,7 @@
 <script>
 export default {
   layout: 'headerguest',
+  middlewares: 'notAdmin',
   data() {
     return {
       value: {

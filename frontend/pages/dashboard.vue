@@ -38,9 +38,8 @@
 </template>
 
 <script>
-// import { API_URL } from '~/contains'
 // export default {
-//   middleware: ['auth-admin'],
+//   middleware: ['admin'],
 //   async asyncData({ $axios }) {
 //     const currentDate = new Date()
 //     const formDate =

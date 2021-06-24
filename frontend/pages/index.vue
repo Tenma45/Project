@@ -4,8 +4,11 @@
       <b-carousel-slide img-src="~assets/home4.png"> </b-carousel-slide>
       <b-carousel-slide img-src="~assets/home6.png"> </b-carousel-slide>
     </b-carousel>
-    <h1 class="big">
-      ยินดีต้อนรับเข้าสู่เว็บไซต์ที่ให้บริการตรวจความเสี่ยงการเป็นโรคเบาหวานและโรคหัวใจ
+    <h1 v-if="!isAdmin" class="big">
+      ยินดีต้อนรับเข้าสู่เว็บไซต์ที่ให้บริการประเมินความเสี่ยงการเป็นโรคเบาหวานและโรคหัวใจ
+    </h1>
+    <h1 v-if="isAdmin" class="big">
+      ยินดีต้อนรับเข้าสู่ระบบจัดการของเว็บไซต์ที่ให้บริการประเมินความเสี่ยงการเป็นโรคเบาหวานและโรคหัวใจ
     </h1>
   </div>
 </template>
@@ -13,6 +16,15 @@
 <script>
 export default {
   layout: 'headerguest',
+  computed: {
+    isAdmin() {
+      if (this.$auth.user?.role?.name === 'Admin') {
+        return true
+      } else {
+        return false
+      }
+    },
+  },
 }
 </script>
 

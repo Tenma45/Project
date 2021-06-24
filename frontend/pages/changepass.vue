@@ -95,7 +95,7 @@ import { required, minLength, sameAs } from 'vuelidate/lib/validators'
 
 export default {
   layout: 'headerguest',
-  middleware: 'auth',
+  middleware: ['auth', 'notAdmin'],
   data() {
     return {
       show: true,

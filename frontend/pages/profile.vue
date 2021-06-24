@@ -193,7 +193,7 @@
 <script>
 export default {
   layout: 'headerguest',
-  middleware: 'auth',
+  middleware: ['auth', 'notAdmin'],
   data() {
     return {
       sortBy: 'created_at',

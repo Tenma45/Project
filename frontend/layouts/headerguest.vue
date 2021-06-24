@@ -28,12 +28,14 @@
           <b-nav-item to="/"><p class="a">หน้าแรก</p></b-nav-item>
           <!-- b-nav-item ไม่มี property style color -->
 
-          <b-nav-item to="/aboutus"><p class="a">เกี่ยวกับเรา</p></b-nav-item>
+          <b-nav-item v-if="!isAdmin" to="/aboutus"
+            ><p class="a">เกี่ยวกับเรา</p></b-nav-item
+          >
 
-          <b-nav-item v-if="$auth.loggedIn" to="/profile"
+          <b-nav-item v-if="$auth.loggedIn && !isAdmin" to="/profile"
             ><p class="a">ข้อมูลสมาชิก</p></b-nav-item
           >
-          <b-navbar toggleable type="dark">
+          <b-navbar v-if="!isAdmin" toggleable type="dark">
             <b-navbar-brand href="#">
               <p class="e">ประเมินโรค</p>
             </b-navbar-brand>
@@ -52,7 +54,7 @@
             </b-collapse>
           </b-navbar>
 
-          <b-navbar toggleable type="dark">
+          <b-navbar v-if="!isAdmin" toggleable type="dark">
             <b-navbar-brand href="#" target="navbar-toggle-collapse2"
               ><p class="e">ข้อมูลโรค</p></b-navbar-brand
             >
@@ -71,7 +73,15 @@
             </b-collapse>
           </b-navbar>
 
-          <b-nav-item to="/game"><p class="a">เกมส์ตอบคำถาม</p></b-nav-item>
+          <b-nav-item v-if="!isAdmin" to="/game"
+            ><p class="a">เกมส์ตอบคำถาม</p></b-nav-item
+          >
+          <b-nav-item v-if="isAdmin" to="/dashboard"
+            ><p class="a">แสดงปฎิสัมพันธ์</p></b-nav-item
+          >
+          <b-nav-item v-if="isAdmin" to="/updatemodel"
+            ><p class="a">อัพเดทโมเดลการประเมินความเสี่ยงโรค</p></b-nav-item
+          >
           <b-nav-item v-if="!$auth.loggedIn" to="/login"
             ><p class="a">เข้าสู่ระบบ</p></b-nav-item
           >
@@ -96,6 +106,13 @@ export default {
         return this.$auth.user.FirstName + ' ' + this.$auth.user.LastName
       } else {
         return 'Guest'
+      }
+    },
+    isAdmin() {
+      if (this.$auth.user?.role?.name === 'Admin') {
+        return true
+      } else {
+        return false
       }
     },
   },

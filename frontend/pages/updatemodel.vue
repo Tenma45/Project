@@ -39,6 +39,7 @@
 <script>
 export default {
   layout: 'headerguest',
+  middleware: ['admin'],
   data() {
     return {
       file: null,
