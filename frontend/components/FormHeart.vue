@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="font-family: 'K2D', sans-serif">
     <b-form-group
       label-cols-sm="62"
       label-size="lg"

@@ -6,7 +6,7 @@
           <h1 class="b">เกมส์ตอบคําถาม</h1>
           <hr class="my-3" />
         </b-col>
-        <b-col cols="12" class="text-center">
+        <b-col cols="12">
           <b-embed
             type="iframe"
             aspect="16by9"

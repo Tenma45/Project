@@ -77,6 +77,7 @@
       :id="infoHeartModal.id"
       :title="infoHeartModal.title"
       ok-only
+      hide-footer
       @hide="resetInfoModal('heart')"
     >
       <FormHeart :data="infoHeartModal.data" />
@@ -85,6 +86,7 @@
       :id="infoDiabetesModal.id"
       :title="infoDiabetesModal.title"
       ok-only
+      hide-footer
       @hide="resetInfoModal('diabetes')"
     >
       <FormDiabetes :data="infoDiabetesModal.data" />
