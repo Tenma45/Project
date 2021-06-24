@@ -192,11 +192,14 @@ export default {
       return [year, month, day].join('-')
     },
     async fetchDiabete(date) {
-      this.table.itemsDiabete = await this.$axios.$post('db/findid/', {
-        date_from: `${date} 00:00:00`,
-        date_to: `${date} 23:59:59`,
-      })
-      this.table.itemsHeart = await this.$axios.$post('cad/findid', {
+      this.table.itemsDiabete = await this.$axios.$post(
+        'resultdiabetes/findid/',
+        {
+          date_from: `${date} 00:00:00`,
+          date_to: `${date} 23:59:59`,
+        }
+      )
+      this.table.itemsHeart = await this.$axios.$post('resultcad/findid', {
         date_from: `${date} 00:00:00`,
         date_to: `${date} 23:59:59`,
       })

@@ -13,10 +13,11 @@ module.exports = {
     const { date_from, date_to } = ctx.request.body;
     if (user) {
       const res = await strapi.query("resultdiabetes").find({
-        UserID: user.id,
+        userID: user.id,
         created_at_gte: new Date(date_from),
         created_at_lte: new Date(date_to),
       });
+      ctx.send(res);
     }
   },
   async predict(ctx) {

@@ -58,7 +58,7 @@
     },
     {
       "method": "POST",
-      "path": "/db/findid",
+      "path": "/resultdiabetes/findid",
       "handler": "resultdiabetes.findID",
       "config": {
         "policies": []

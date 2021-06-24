@@ -295,13 +295,16 @@ export default {
     },
     async fetchStats(type) {
       if (type === 'diabetes') {
-        this.diabetes.result = await this.$axios.$post('db/findid', {
-          date_from: `${this.diabetes.dateFrom} 00:00:00`,
-          date_to: `${this.diabetes.dateTo} 23:59:59`,
-        })
+        this.diabetes.result = await this.$axios.$post(
+          'resultdiabetes/findid',
+          {
+            date_from: `${this.diabetes.dateFrom} 00:00:00`,
+            date_to: `${this.diabetes.dateTo} 23:59:59`,
+          }
+        )
       }
       if (type === 'heart') {
-        this.heart.result = await this.$axios.$post('cad/findid', {
+        this.heart.result = await this.$axios.$post('resultcad/findid', {
           date_from: `${this.heart.dateFrom} 00:00:00`,
           date_to: `${this.heart.dateTo} 23:59:59`,
         })
