@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resultdiabetes",
+  "info": {
+    "name": "resultdiabetes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "userID": {
+      "type": "integer",
+      "required": true
+    },
+    "age": {
+      "type": "integer",
+      "required": true
+    },
+    "bmi": {
+      "type": "decimal",
+      "required": true
+    },
+    "bpsy": {
+      "type": "decimal",
+      "required": true
+    },
+    "fbs": {
+      "type": "decimal",
+      "required": true
+    },
+    "tchol": {
+      "type": "decimal",
+      "required": true
+    },
+    "hdl": {
+      "type": "decimal",
+      "required": true
+    },
+    "height": {
+      "type": "decimal",
+      "required": true
+    },
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "risk_db": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}
