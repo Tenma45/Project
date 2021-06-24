@@ -204,42 +204,42 @@ export default {
         { key: 'height', label: 'ส่วนสูง', sortable: true },
         { key: 'weight', label: 'น้ำหนัก', sortable: true },
         { key: 'waist', label: 'ความยาวรอบเอว', sortable: true },
-        { key: 'glucose', label: 'ระดับน้ำตาลในเลือด', sortable: true },
+        { key: 'fbs', label: 'ระดับน้ำตาลในเลือด', sortable: true },
         {
-          key: 'pressurehigh',
+          key: 'bpsy',
           label: 'ความดันสูงสุดขณะหัวใจบีบตัว',
           sortable: true,
         },
         {
-          key: 'chloresterolall',
+          key: 'tchol',
           label: 'คลอเรสเตอรอลทั้งหมด',
           sortable: true,
         },
         { key: 'hdl', label: 'คลอเรสเตอรอล HDL', sortable: true },
-        { key: 'risk_diabetes', label: 'ผลลัพธ์', sortable: true },
+        { key: 'risk_db', label: 'ผลลัพธ์', sortable: true },
         { key: 'created_at', label: 'วันที่กรอกข้อมูล', sortable: true },
       ],
 
       heartFields: [
         { key: 'waist', label: 'ความยาวรอบเอว', sortable: true },
-        { key: 'glucose', label: 'ระดับน้ำตาลในเลือด', sortable: true },
+        { key: 'fbs', label: 'ระดับน้ำตาลในเลือด', sortable: true },
         {
-          key: 'pressurehigh',
+          key: 'bpsy',
           label: 'ความดันสูงสุดขณะหัวใจบีบตัว',
           sortable: true,
         },
         {
-          key: 'pressurelow',
+          key: 'bpdi',
           label: 'ความดันต่ำสุดขณะหัวใจคลายตัว',
           sortable: true,
         },
         {
-          key: 'chloresterolall',
+          key: 'tchol',
           label: 'คลอเรสเตอรอลทั้งหมด',
           sortable: true,
         },
         { key: 'hdl', label: 'คลอเรสเตอรอล HDL', sortable: true },
-        { key: 'risk_heart', label: 'ผลลัพธ์', sortable: true },
+        { key: 'risk_cad', label: 'ผลลัพธ์', sortable: true },
         { key: 'created_at', label: 'วันที่กรอกข้อมูล', sortable: true },
       ],
       diabetes: {
@@ -295,13 +295,16 @@ export default {
     },
     async fetchStats(type) {
       if (type === 'diabetes') {
-        this.diabetes.result = await this.$axios.$post('db/findid', {
-          date_from: `${this.diabetes.dateFrom} 00:00:00`,
-          date_to: `${this.diabetes.dateTo} 23:59:59`,
-        })
+        this.diabetes.result = await this.$axios.$post(
+          'resultdiabetes/findid',
+          {
+            date_from: `${this.diabetes.dateFrom} 00:00:00`,
+            date_to: `${this.diabetes.dateTo} 23:59:59`,
+          }
+        )
       }
       if (type === 'heart') {
-        this.heart.result = await this.$axios.$post('cad/findid', {
+        this.heart.result = await this.$axios.$post('resultcad/findid', {
           date_from: `${this.heart.dateFrom} 00:00:00`,
           date_to: `${this.heart.dateTo} 23:59:59`,
         })

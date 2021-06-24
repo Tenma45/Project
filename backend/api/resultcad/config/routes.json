@@ -58,8 +58,8 @@
     },
     {
       "method": "POST",
-      "path": "/cad/findid",
-      "handler": "resultdiabetes.findID",
+      "path": "/resultcad/findid",
+      "handler": "resultcad.findID",
       "config": {
         "policies": []
       }

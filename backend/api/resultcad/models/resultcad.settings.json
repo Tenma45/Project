@@ -39,9 +39,13 @@
       "type": "decimal",
       "required": true
     },
-    "risk_cad": {
-      "type": "boolean",
+    "waist": {
+      "type": "decimal",
       "required": true
+    },
+    "risk_cad": {
+      "required": true,
+      "type": "integer"
     }
   }
 }
