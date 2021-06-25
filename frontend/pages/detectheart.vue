@@ -110,6 +110,22 @@
           ></b-form-input>
         </b-col>
         <b-col sm="5"> มิลลิกรัม.เดซิลิตร </b-col>
+
+        <b-col cols="5">มีญาติเป็นโรคเบาหวาน</b-col>
+        <b-col cols="2" class="m-0 mt-3">
+          <b-form-group v-slot="{ ariaDescribedby }">
+            <b-form-radio-group
+              id="radio-group-2"
+              v-model="value.dbfam"
+              :aria-describedby="ariaDescribedby"
+              name="radio-sub-component"
+            >
+              <b-form-radio value="1"> มี </b-form-radio>
+              <b-form-radio value="0"> ไม่มี </b-form-radio>
+            </b-form-radio-group>
+          </b-form-group>
+        </b-col>
+        <b-col cols="5">-</b-col>
       </b-row>
     </b-card>
 
@@ -145,6 +161,7 @@ export default {
         bpdi: 80,
         tchol: 175,
         hdl: 50,
+        dbfam: 0,
       },
       message: '',
       alert: '',
@@ -162,6 +179,7 @@ export default {
         bpdi: this.value.bpdi,
         tchol: this.value.tchol,
         hdl: this.value.hdl,
+        dbfam: this.value.dbfam,
       })
       res.data === 0
         ? (this.message = 'ไม่มีความเสี่ยงจะเป็นโรคหัวใจ')
