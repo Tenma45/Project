@@ -196,6 +196,9 @@ export default {
             FirstName: this.form.firstName,
             LastName: this.form.lastName,
           })
+          await this.$axios.post('activities', {
+            activity: 'register',
+          })
           await this.$auth.loginWith('local', {
             data: {
               identifier: this.form.email,

@@ -43,9 +43,14 @@
       "type": "decimal",
       "required": true
     },
+    "dbfam": {
+      "type": "boolean",
+      "private": false,
+      "required": true
+    },
     "risk_cad": {
-      "required": true,
-      "type": "integer"
+      "type": "boolean",
+      "required": true
     }
   }
 }

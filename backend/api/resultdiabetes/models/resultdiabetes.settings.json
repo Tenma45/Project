@@ -51,8 +51,12 @@
       "type": "decimal",
       "required": true
     },
+    "dbfam": {
+      "type": "boolean",
+      "required": true
+    },
     "risk_db": {
-      "type": "integer",
+      "type": "boolean",
       "required": true
     }
   }

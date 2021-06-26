@@ -22,6 +22,20 @@
 export default {
   layout: 'headerguest',
   middlewares: 'notAdmin',
+  mounted() {
+    this.init()
+  },
+  methods: {
+    async init() {
+      try {
+        await this.$axios.post('activities', {
+          activity: 'quiz',
+        })
+      } catch (e) {
+        console.log(e)
+      }
+    },
+  },
 }
 </script>
 

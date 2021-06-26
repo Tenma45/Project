@@ -21,20 +21,21 @@ module.exports = {
     }
   },
   async predict(ctx) {
-    const { fbs, waist, age, bpsy, tchol, hdl, weight, height } =
+    const { fbs, waist, age, bpsy, tchol, hdl, weight, height, dbfam } =
       ctx.request.body;
     const user = ctx.state.user;
     const bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
     const result = await axios.post(
       "http://localhost:5000/predict/?target=db",
       {
-        fbs: fbs,
-        bmi: bmi,
-        waist: waist,
-        age: age,
-        bpsy: bpsy,
-        tchol: tchol,
-        hdl: hdl,
+        fbs,
+        bmi,
+        waist,
+        age,
+        bpsy,
+        tchol,
+        hdl,
+        dbfam,
       }
     );
     const risk_db = parseInt(result.data);
@@ -53,6 +54,7 @@ module.exports = {
         weight,
         risk_db,
         waist,
+        dbfam,
       });
     }
     ctx.send(risk_db);

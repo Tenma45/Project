@@ -48,13 +48,13 @@ export default {
     updateChart(data) {
       this.chartData.datasets.push({
         label: 'เบาหวาน',
-        data: this.items.prediction_diabetes,
+        data: this.items.predictdb,
         fill: false,
         borderColor: '#EF4444',
       })
       this.chartData.datasets.push({
         label: 'โรคหัวใจ',
-        data: this.items.prediction_heart,
+        data: this.items.predictcad,
         fill: false,
         borderColor: '#EC4899',
       })
@@ -88,13 +88,13 @@ export default {
     init() {
       this.chartData.datasets.push({
         label: 'ประเมินเบาหวานเบาหวาน',
-        data: this.items.prediction_diabetes,
+        data: this.items.predictdb,
         fill: false,
         borderColor: '#EF4444',
       })
       this.chartData.datasets.push({
         label: 'ประเมินโรคหัวใจ',
-        data: this.items.prediction_heart,
+        data: this.items.predictcad,
         fill: false,
         borderColor: '#EC4899',
       })

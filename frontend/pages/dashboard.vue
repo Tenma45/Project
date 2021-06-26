@@ -38,44 +38,45 @@
 </template>
 
 <script>
-// export default {
-//   middleware: ['admin'],
-//   async asyncData({ $axios }) {
-//     const currentDate = new Date()
-//     const formDate =
-//       currentDate.getFullYear() +
-//       '-' +
-//       (currentDate.getMonth() + 1) +
-//       '-' +
-//       (currentDate.getDate() - 7)
-//     const toDate =
-//       currentDate.getFullYear() +
-//       '-' +
-//       (currentDate.getMonth() + 1) +
-//       '-' +
-//       currentDate.getDate()
+export default {
+  layout: 'headerguest',
+  middleware: ['admin'],
+  async asyncData({ $axios }) {
+    const currentDate = new Date()
+    const formDate =
+      currentDate.getFullYear() +
+      '-' +
+      (currentDate.getMonth() + 1) +
+      '-' +
+      (currentDate.getDate() - 7)
+    const toDate =
+      currentDate.getFullYear() +
+      '-' +
+      (currentDate.getMonth() + 1) +
+      '-' +
+      currentDate.getDate()
 
-//     const data = await $axios.$post(API_URL.ACTIVITY_STATS_YEAR, {
-//       date_from: formDate,
-//       date_to: toDate,
-//     })
-//     console.log('asyncData => ', data)
-//     return { data }
-//   },
-//   data() {
-//     return {
-//       dateFrom: null,
-//       dateTo: null,
-//       data: null,
-//     }
-//   },
-//   methods: {
-//     async fetchStats() {
-//       this.data = await this.$axios.$post(API_URL.ACTIVITY_STATS_YEAR, {
-//         date_from: this.dateFrom,
-//         date_to: this.dateTo,
-//       })
-//     },
-//   },
-// }
+    const data = await $axios.$post('/activities/activityMonth', {
+      date_from: formDate,
+      date_to: toDate,
+    })
+    console.log('asyncData => ', data)
+    return { data }
+  },
+  data() {
+    return {
+      dateFrom: null,
+      dateTo: null,
+      data: null,
+    }
+  },
+  methods: {
+    async fetchStats() {
+      this.data = await this.$axios.$post('/activities/activityMonth', {
+        date_from: this.dateFrom,
+        date_to: this.dateTo,
+      })
+    },
+  },
+}
 </script>

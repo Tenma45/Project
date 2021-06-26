@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   async predict(ctx) {
-    const { fbs, waist, age, bpsy, bpdi, tchol, hdl } = ctx.request.body;
+    const { fbs, waist, age, bpsy, bpdi, tchol, hdl, dbfam } = ctx.request.body;
     const user = ctx.state.user;
     const result = await axios.post(
       "http://localhost:5000/predict/?target=hd",
@@ -32,6 +32,7 @@ module.exports = {
         bpdi,
         tchol,
         hdl,
+        dbfam,
       }
     );
     const risk_cad = parseInt(result.data);
@@ -47,6 +48,7 @@ module.exports = {
         hdl,
         risk_cad,
         waist,
+        dbfam,
       });
     }
     ctx.send(risk_cad);

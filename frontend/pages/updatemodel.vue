@@ -8,8 +8,8 @@
         </b-col>
         <b-col cols="12">
           <b-card>
-            <b-alert v-if="massage" show variant="success">
-              {{ massage }}
+            <b-alert v-if="message" show variant="success">
+              {{ message }}
             </b-alert>
             <b-alert v-if="error" show variant="danger">{{ error }}</b-alert>
             <b-form-group
@@ -37,13 +37,25 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   layout: 'headerguest',
   middleware: ['admin'],
   data() {
     return {
       file: null,
+      alert: null,
+      message: null,
     }
+  },
+  methods: {
+    async submit() {
+      try {
+        await axios.post('http://localhost:5000/update/')
+      } catch (e) {
+        console.log(e)
+      }
+    },
   },
 }
 </script>

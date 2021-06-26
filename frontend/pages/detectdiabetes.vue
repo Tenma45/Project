@@ -201,6 +201,9 @@ export default {
       res.data === 0
         ? (this.message = 'ไม่มีความเสี่ยงจะเป็นโรคเบาหวาน')
         : (this.alert = 'มีความเสี่ยงจะเป็นโรคเบาหวาน')
+      await this.$axios.post('activities', {
+        activity: 'predictdb',
+      })
     },
   },
 }

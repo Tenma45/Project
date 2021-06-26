@@ -184,6 +184,9 @@ export default {
       res.data === 0
         ? (this.message = 'ไม่มีความเสี่ยงจะเป็นโรคหัวใจ')
         : (this.alert = 'มีความเสี่ยงจะเป็นโรคหัวใจ')
+      await this.$axios.post('activities', {
+        activity: 'predictcad',
+      })
     },
   },
 }

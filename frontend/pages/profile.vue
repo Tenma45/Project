@@ -119,8 +119,8 @@
                 responsive
                 small
               >
-                <template #cell(risk_diabetes)="data">
-                  {{ transformResult(data.item.risk_diabetes) }}
+                <template #cell(risk_db)="data">
+                  {{ transformResult(data.item.risk_db) }}
                 </template>
                 <template #cell(created_at)="data">
                   {{ $moment(data.item.created_at).format('lll') }}
@@ -175,8 +175,8 @@
                 small
                 responsive
               >
-                <template #cell(risk_heart)="data">
-                  {{ transformResult(data.item.risk_heart) }}
+                <template #cell(risk_cad)="data">
+                  {{ transformResult(data.item.risk_cad) }}
                 </template>
                 <template #cell(created_at)="data">
                   {{ $moment(data.item.created_at).format('lll') }}
@@ -285,10 +285,10 @@ export default {
     },
     transformResult(data) {
       let result = ''
-      if (data === 0) {
+      if (data === false) {
         result = 'ไม่มีความเสี่ยง'
       }
-      if (data === 1) {
+      if (data === true) {
         result = 'มีความเสี่ยง'
       }
       return result
