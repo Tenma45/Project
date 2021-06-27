@@ -205,6 +205,7 @@ export default {
               password: this.form.password,
             },
           })
+          this.$toast.success('ลงทะเบียนสำเร็จ')
         } catch (e) {
           console.log('Exception: ', e.response)
         }

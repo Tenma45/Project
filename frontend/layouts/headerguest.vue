@@ -119,6 +119,7 @@ export default {
   methods: {
     async logOut() {
       await this.$auth.logout()
+      this.$toast.success('ออกจากระบบสำเร็จ')
     },
   },
 }

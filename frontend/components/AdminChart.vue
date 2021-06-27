@@ -25,7 +25,7 @@ export default {
             {
               type: 'time',
               time: {
-                unit: 'month',
+                unit: 'day',
               },
             },
           ],

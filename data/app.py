@@ -98,5 +98,15 @@ def update():
     y_scores = hdmlp.predict(x_test)
     hdmlp_scores = f1_score(y_test, y_scores)
 
+    # recieve file form frontend
+    # if(target == 'db'):
+    # 	# update diabetes code
+    # 	pickle.dump(model, open('model/db_forest.sav', 'wb'))
+    # 	db = pickle.load(open('model/db_forest.sav','rb'))
+    # elif(target == 'heart'):
+    # 	# update heart code
+    # 	pickle.dump(model, open('model/hd_forest.sav', 'wb'))
+    # 	hd = pickle.load(open('model/hd_forest.sav','rb'))
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)

@@ -107,6 +107,7 @@ export default {
       try {
         if (!this.$v.data.$anyError) {
           await this.$auth.loginWith('local', { data: this.data })
+          this.$toast.success('เข้าสู่ระบบสำเร็จ')
         }
       } catch (e) {
         if (e.response?.data?.message[0]?.messages[0]?.message) {
