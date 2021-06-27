@@ -5,7 +5,7 @@
         <img src="../assets/logoweb1.png" />
       </b-navbar-brand>
       <b-navbar-nav class="ml-auto">
-        <b-navbar-brand>
+        <b-navbar-brand style="font-family: 'K2D', sans-serif">
           {{ customerName }}
         </b-navbar-brand>
       </b-navbar-nav>
@@ -77,10 +77,10 @@
             ><p class="a">เกมส์ตอบคำถาม</p></b-nav-item
           >
           <b-nav-item v-if="isAdmin" to="/dashboard"
-            ><p class="a">แสดงปฎิสัมพันธ์</p></b-nav-item
+            ><p class="a">แดชบอร์ด</p></b-nav-item
           >
           <b-nav-item v-if="isAdmin" to="/updatemodel"
-            ><p class="a">อัพเดทโมเดลการประเมินความเสี่ยงโรค</p></b-nav-item
+            ><p class="a">อัพเดทโมเดล</p></b-nav-item
           >
           <b-nav-item v-if="!$auth.loggedIn" to="/login"
             ><p class="a">เข้าสู่ระบบ</p></b-nav-item

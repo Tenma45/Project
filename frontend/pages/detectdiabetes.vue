@@ -125,23 +125,25 @@
           ></b-form-input>
         </b-col>
         <b-col sm="5"> มิลลิกรัม.เดซิลิตร </b-col>
-      </b-row>
 
-      <b-col cols="5">มีญาติเป็นโรคเบาหวาน</b-col>
-      <b-col cols="2" class="m-0 mt-3">
-        <b-form-group v-slot="{ ariaDescribedby }">
-          <b-form-radio-group
-            id="radio-group-2"
-            v-model="value.dbfam"
-            :aria-describedby="ariaDescribedby"
-            name="radio-sub-component"
-          >
-            <b-form-radio value="1"> มี </b-form-radio>
-            <b-form-radio value="0"> ไม่มี </b-form-radio>
-          </b-form-radio-group>
-        </b-form-group>
-      </b-col>
-      <b-col cols="5">-</b-col>
+        <b-col cols="12"><hr class="my-2" /></b-col>
+
+        <b-col cols="5">มีญาติเป็นโรคเบาหวาน</b-col>
+        <b-col cols="2" class="m-0 mt-3">
+          <b-form-group v-slot="{ ariaDescribedby }">
+            <b-form-radio-group
+              id="radio-group-2"
+              v-model="value.dbfam"
+              :aria-describedby="ariaDescribedby"
+              name="radio-sub-component"
+            >
+              <b-form-radio value="1"> มี </b-form-radio>
+              <b-form-radio value="0"> ไม่มี </b-form-radio>
+            </b-form-radio-group>
+          </b-form-group>
+        </b-col>
+        <b-col cols="5">-</b-col>
+      </b-row>
     </b-card>
 
     <b-button
