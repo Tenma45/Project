@@ -16,9 +16,12 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        labels: {
-          fontSize: 15,
-          fontFamily: 'K2D',
+        legend: {
+          position: 'top',
+          labels: {
+            fontSize: 15,
+            fontFamily: 'K2D',
+          },
         },
         scales: {
           xAxes: [
@@ -47,13 +50,13 @@ export default {
   methods: {
     updateChart(data) {
       this.chartData.datasets.push({
-        label: 'เบาหวาน',
+        label: 'ประเมินความเสี่ยงโรคเบาหวาน',
         data: this.items.predictdb,
         fill: false,
         borderColor: '#EF4444',
       })
       this.chartData.datasets.push({
-        label: 'โรคหัวใจ',
+        label: 'ประเมินความเสี่ยงโรคหัวใจ',
         data: this.items.predictcad,
         fill: false,
         borderColor: '#EC4899',
@@ -65,7 +68,7 @@ export default {
         borderColor: '#34D399',
       })
       this.chartData.datasets.push({
-        label: 'เล่นเกม',
+        label: 'เล่นเกมส์',
         data: this.items.quiz,
         fill: false,
         borderColor: '#3B82F6',
@@ -73,6 +76,13 @@ export default {
       this.options = {
         responsive: true,
         maintainAspectRatio: false,
+        legend: {
+          position: 'top',
+          labels: {
+            fontSize: 15,
+            fontFamily: 'K2D',
+          },
+        },
         scales: {
           xAxes: [
             {
@@ -87,13 +97,13 @@ export default {
     },
     init() {
       this.chartData.datasets.push({
-        label: 'ประเมินเบาหวานเบาหวาน',
+        label: 'ประเมินความเสี่ยงโรคเบาหวาน',
         data: this.items.predictdb,
         fill: false,
         borderColor: '#EF4444',
       })
       this.chartData.datasets.push({
-        label: 'ประเมินโรคหัวใจ',
+        label: 'ประเมินความเสี่ยงโรคหัวใจ',
         data: this.items.predictcad,
         fill: false,
         borderColor: '#EC4899',
@@ -105,7 +115,7 @@ export default {
         borderColor: '#34D399',
       })
       this.chartData.datasets.push({
-        label: 'เล่นเกม',
+        label: 'เล่นเกมส์',
         data: this.items.quiz,
         fill: false,
         borderColor: '#3B82F6',

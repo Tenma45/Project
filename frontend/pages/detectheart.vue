@@ -111,6 +111,8 @@
         </b-col>
         <b-col sm="5"> มิลลิกรัม.เดซิลิตร </b-col>
 
+        <b-col cols="12"><hr class="my-2" /></b-col>
+
         <b-col cols="5">มีญาติเป็นโรคเบาหวาน</b-col>
         <b-col cols="2" class="m-0 mt-3">
           <b-form-group v-slot="{ ariaDescribedby }">
