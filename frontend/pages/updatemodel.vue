@@ -11,7 +11,7 @@
             <b-alert v-if="message" show variant="success">
               {{ message }}
             </b-alert>
-            <b-alert v-if="error" show variant="danger">{{ error }}</b-alert>
+            <b-alert v-if="alert" show variant="danger">{{ alert }}</b-alert>
             <b-form-group
               style="font-size: 20px"
               label="โมเดลตรวจโรคเบาหวานและโรคหัวใจ"
@@ -50,10 +50,23 @@ export default {
   },
   methods: {
     async submit() {
+      this.alert = null
+      this.message = null
       try {
-        await axios.post('http://localhost:5000/update/')
+        const formData = new FormData()
+        formData.append('file', this.file)
+        const response = await axios.post(
+          'http://localhost:5000/update/',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        )
+        this.message = response.data.message
       } catch (e) {
-        console.log(e)
+        this.alert = 'มีข้อผิดพลาดในการอัพเดทโมเดล'
       }
     },
   },

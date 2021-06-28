@@ -47,7 +47,7 @@ export default {
 
   toast: {
     theme: 'toasted-primary',
-    position: 'top-right',
+    position: 'top-center',
     duration: 5000,
   },
 

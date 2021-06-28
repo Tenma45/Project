@@ -60,7 +60,6 @@ export default {
       date_from: formDate,
       date_to: toDate,
     })
-    console.log('asyncData => ', data)
     return { data }
   },
   data() {

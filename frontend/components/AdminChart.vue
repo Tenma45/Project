@@ -32,6 +32,18 @@ export default {
               },
             },
           ],
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                callback(value) {
+                  if (value % 1 === 0) {
+                    return value
+                  }
+                },
+              },
+            },
+          ],
         },
       },
     }
